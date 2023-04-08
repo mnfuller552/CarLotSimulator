@@ -6,28 +6,65 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
+            var lot = new CarLot();
+            
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+            var carOne = new Car();
+            carOne.Year = 2013;
+            carOne.Make = "Ford";
+            carOne.Model = "Focus";
+            carOne.IsDriveable = true;
+            carOne.HonkNoise = "beep";
+            carOne.EngineNoise = "vroom";
+
+            lot.Cars.Add(carOne);
 
 
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
+            var carTwo = new Car();
 
-            //*************BONUS*************//
+            carTwo.Year = 2019;
+            carTwo.Make = "Tesla";
+            carTwo.Model = "Model S";
+            carTwo.IsDriveable = true;
+            carTwo.HonkNoise = "brmmp";
+            carTwo.EngineNoise = "silent";
 
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
+            lot.Cars.Add(carTwo);
 
-            //*************BONUS X 2*************//
+            var carThree = new Car(2014, "Jeep", "Wrangler", "loud", "honk", true);
 
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            lot.Cars.Add(carThree);
+
+            carOne.MakeEngineNoise(carOne.EngineNoise);
+            carOne.MakeHonkNoise(carOne.HonkNoise);
+
+            carTwo.MakeEngineNoise(carTwo.EngineNoise);
+            carTwo.MakeHonkNoise(carTwo.HonkNoise);
+
+            carThree.MakeEngineNoise(carThree.EngineNoise);
+            carThree.MakeHonkNoise(carThree.HonkNoise);
+
+
+            foreach(var Car in lot.Cars)
+            {
+
+                Console.WriteLine($" Year:{Car.Year} Make:{Car.Make} Model:{Car.Model}");
+
+            }
+
+
+
+
+
+
+
+
+            
+            
+
+            
+          
+
         }
     }
 }
