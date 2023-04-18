@@ -7,8 +7,8 @@ namespace CarLotSimulator
         static void Main(string[] args)
         {
             var lot = new CarLot();
-            
 
+            
             var carOne = new Car();
             carOne.Year = 2013;
             carOne.Make = "Ford";
@@ -19,6 +19,7 @@ namespace CarLotSimulator
 
             lot.Cars.Add(carOne);
 
+            Console.WriteLine(Car.AmountOfCarsCreated);
 
             var carTwo = new Car();
 
@@ -31,9 +32,13 @@ namespace CarLotSimulator
 
             lot.Cars.Add(carTwo);
 
+            Console.WriteLine(Car.AmountOfCarsCreated);
+
             var carThree = new Car(2014, "Jeep", "Wrangler", "loud", "honk", true);
 
             lot.Cars.Add(carThree);
+
+            Console.WriteLine(Car.AmountOfCarsCreated);
 
             carOne.MakeEngineNoise(carOne.EngineNoise);
             carOne.MakeHonkNoise(carOne.HonkNoise);
